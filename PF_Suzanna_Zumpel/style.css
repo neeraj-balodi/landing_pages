@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: oswald, "Courier New", Courier, monospace;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#main-container {
+  height: 100%;
+  width: 100%;
+  background-color: hsl(346deg 17% 70%);
+  display: flex;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.heading {
+  text-align: center;
+  flex: 1;
+  font-weight: 900;
+  color: white;
+  font-size: 30px;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+}
+
+.circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(100);
+  transition: transform 0.5s ease; /* Add transition for smooth rotation */
+}
+
+.rotate {
+  animation: rotateImage 5s linear infinite; /* Rotate the image infinitely */
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.sidebar {
+  height: 100%;
+  width: 20%;
+}
+
+.content {
+  height: 100%;
+  width: 70%;
+  background-image: url("https://images.unsplash.com/photo-1502323777036-f29e3972d82f?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: bottom;
+}
+
+.background-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: hsla(347, 7%, 24%, 0.559);
+}
+
+.footer {
+  height: 100%;
+  width: 10%;
+}
+
+.text-content {
+  width: 500px;
+  position: absolute;
+  left: 5%;
+  top: 70%;
+  transform: translate(0, -50%);
+}
+
+.text-content > h1 {
+  font-size: 90px;
+  font-weight: 800;
+  line-height: 90px;
+  letter-spacing: 3px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.featured-image {
+  height: 400px;
+  width: 300px;
+  background-image: url("https://images.unsplash.com/photo-1518518873111-6ca469aa4560?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 70%;
+  right: 3%;
+  transform: translate(0, -50%);
+}
+
+.vertical-text {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+.vertical-text h2 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+  transform: rotate(-180deg);
+  transform-origin: left top;
+  font-size: 80px;
+  font-weight: 900;
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+  letter-spacing: 10px;
+  margin: 0;
+  animation: animateText 6000ms linear infinite;
+}
+
+@keyframes animateText {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg); /* Start rotation from 0 degrees */
+  }
+  to {
+    transform: rotate(360deg); /* Rotate the image by 360 degrees */
+  }
+}
